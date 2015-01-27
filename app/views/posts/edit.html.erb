@@ -1,0 +1,15 @@
+<%= render 'home/navbar' %>
+
+    <%= simple_form_for @post do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <p>
+        <%= f.label :category_id %>
+        <%= f.select :category_id, Category.all.map { |f| [f.name, f.id]} %>
+      </p>
+      <%= f.input :country%>
+      <%= f.input :city %>
+      <%= f.input :state %>
+      <%= f.input :zipcode %>
+      <%= f.button :submit %>
+    <% end %>

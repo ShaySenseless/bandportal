@@ -1,0 +1,21 @@
+<%= render 'home/navbar' %>
+
+<%= render 'home/sidebar' %>
+
+<div class="panel panel-default col-md-10">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Panel heading</div>
+
+  <!-- Table -->
+  <table class="table">
+		<tr>
+			<td><%= @post.created_at.strftime("Posted on %m/%d/%Y at %I:%M%p") %></td>
+			<td><%= @post.title %></td>
+			<td><%= @post.description %></td>
+			<% if @post.user_id = current_user %>
+				<td><%= link_to 'edit', edit_post_path %></td>
+				<td><%= link_to 'delete', @post, data: {confirm: "Are you sure you want to delete this post?"}, method: :delete %></td>
+			<% end %>
+		</tr>
+  </table>
+</div>

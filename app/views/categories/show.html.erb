@@ -1,0 +1,25 @@
+<%= render 'home/navbar' %>
+
+<%= render 'home/sidebar' %>
+
+<div class="panel panel-default inline col-md-10">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+	  <span>Panel heading</span>
+  	  <span><%= link_to 'new post', new_post_path %></span>
+  </div>
+
+  <!-- Table -->
+  <table class="table">
+	<% @posts.each do |f| %>
+		<tr>
+			<td><%= f.created_at.strftime("Posted on %m/%d/%Y at %I:%M%p") %></td>
+			<td><%= link_to f.title, post_path(f.id) %></td>
+			<% if f.user_id = current_user %>
+			<td><%= link_to 'edit', edit_post_path(f.id) %></td>
+			<td><%= link_to 'delete', post_path(f.id), data: {confirm: "Are you sure you want to delete this post?"}, method: :delete %></td>
+			<% end %>
+		</tr>
+	<% end %>
+  </table>
+</div>
