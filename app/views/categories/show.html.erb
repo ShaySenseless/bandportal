@@ -4,16 +4,19 @@
 
 <div class="panel panel-default inline col-md-10" style="padding-left: 0">
   <!-- Default panel contents -->
-  <div class="panel-heading">
-	  <span>Panel heading</span>
-  	  <span><%= link_to 'new post', new_post_path %></span>
-  </div>
+
 
   <!-- Table -->
   <table class="table">
+	  <tr class="panel-heading" style="background-color: #e7e7e7">
+		  <td>Posted on</td>
+		  <td>Title</td>
+		  <td></td>
+	  	  <td><%= link_to 'new post', new_post_path %></td>
+	  </tr>
 	<% @posts.each do |f| %>
 		<tr>
-			<td><%= f.created_at.strftime("Posted on %m/%d/%Y at %I:%M%p") %></td>
+			<td><%= f.created_at.strftime("%m/%d/%Y at %I:%M%p") %></td>
 			<td><%= link_to f.title, post_path(f.id) %></td>
 			<% if f.user_id = current_user %>
 				<td><%= link_to 'edit', edit_post_path(f.id) %></td>
