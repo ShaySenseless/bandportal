@@ -1,12 +1,12 @@
+<% @categories = Category.all %>
 <div class="row">
-		<ul class="nav nav-pills nav-stacked col-md-2 btn" style="border-right: 1px solid; padding: 0">
-			<li><%= link_to 'Rehearsal Room', category_path(1) %></li>
-			<li><%= link_to 'Producer', category_path(2) %></li>
-			<li><%= link_to 'Studio', category_path(3) %></li>
-			<li><%= link_to 'Mixing engineer', category_path(4) %></li>
-			<li><%= link_to 'Mastering', category_path(5) %></li>
-			<li><%= link_to 'Graphics', category_path(8) %></li>
-			<li><%= link_to 'Distribution', category_path(6) %></li>
-			<li><%= link_to 'Transportation', category_path(7) %></li>
-			<li><%= link_to 'Shows', category_path(9) %></li>
-		</ul>
+	<ul class="btn-group-vertical col-md-2" role="group" style="border-right: 1px solid; padding: 0">
+		<% @categories.each do |f| %>
+			<li type="button" class="btn btn-default"><%= link_to f.name, category_path(f.id) %>
+				<ul type="button" class="button-group button-group-sm" style="padding: 0">
+					<li type="button" class="btn" style="padding-top: 0" ><%= link_to 'wanted', category_wanted_path(f.id) %></li>
+					<li type="button" class="btn" style="padding-top: 0" ><%= link_to 'seeking', category_seeking_path(f.id) %></li>
+				</ul>
+			</li>
+		<% end %>
+	</ul>

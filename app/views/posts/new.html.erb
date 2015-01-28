@@ -3,14 +3,19 @@
     <%= simple_form_for @post do |f| %>
       <%= f.input :title %>
       <%= f.input :description %>
+
+      <p>
+        <%= f.label :post_type %>
+        <%= f.select :post_type, ["wanted", "seeking"] %>
+      </p>
+
       <p>
         <%= f.label :category_id %>
         <%= f.select :category_id, Category.all.map { |f| [f.name, f.id]} %>
         <%= link_to 'Not sure where to post?', help_path %>
       </p>
-      <%= f.input :country%>
-      <%= f.input :city %>
-      <%= f.input :state %>
-      <%= f.input :zipcode %>
+      <%= f.input :location %>
+      <%= f.input :link %>
       <%= f.button :submit %>
     <% end %>
+<%= render 'home/footer' %>
