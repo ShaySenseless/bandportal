@@ -14,6 +14,8 @@ gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'simple_form'
 gem 'country_select', '~> 2.1.0'
+gem 'slide-down-alerts-rails'
+gem 'will_paginate', '~> 3.0.6'
 
 group :development, :test do
   gem 'byebug'

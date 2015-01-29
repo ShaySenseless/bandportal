@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+	before_filter :authenticate_user!, only: [:edit, :update, :destroy]
 	before_filter :is_user?, only: [:edit, :update, :destroy]
 
 	def create
@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 	end
 	def new
 		@post = Post.new
+		user_signed_in? { @post.params[:email] = current_user.email }
 	end
 
 	def index
@@ -18,16 +19,19 @@ class PostsController < ApplicationController
 	def index_wanted
 			@posts = Post.where(post_type: "wanted")
 			@posts = @posts.where(category_id: params[:category_id])
+			@posts = @posts.order(:created_at).reverse_order.paginate(:page => params[:page], :per_page => 12)
 	end
 	def index_seeking
 			@posts = Post.where(post_type: "seeking")
-			@posts = @posts.where(category_id: params[:category_id])	
+			@posts = @posts.where(category_id: params[:category_id])
+			@posts = @posts.order(:created_at).reverse_order.paginate(:page => params[:page], :per_page => 12)
 	end
 	def show
 		@post = Post.find(params[:id])
 	end
 	def my_posts
 		@posts = Post.where(user: current_user)
+		@posts = @posts.order(:created_at).reverse_order.paginate(:page => params[:page], :per_page => 12)
 	end
 
 	def edit
@@ -48,13 +52,6 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit(:title, :description, :country, :city, :state, :zipcode, :category_id, :user_id, :post_type, :link, :location)
-	end
-
-	def is_user?
-		@post = Post.find(params[:id])
-		unless current_user = @post.user_id
-			redirect_to root_path, alert: "Sorry, you are not authorized to do that."
-		end
+		params.require(:post).permit(:title, :description, :country, :city, :state, :zipcode, :category_id, :user_id, :post_type, :link, :location, :email)
 	end
 end

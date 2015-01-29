@@ -7,9 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
+	<%= slide_down_alerts %>
+	<%= render 'home/navbar' %>
+	<div class="row">
+		<%= render 'home/sidebar' %>
+		<div class="col-md-10" style="padding-left: 0">
+		<%= yield %>
+		</div>
+	</div>
+	<%= render 'home/footer' %>
 </body>
 </html>

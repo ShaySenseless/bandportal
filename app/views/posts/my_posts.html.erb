@@ -1,1 +1,21 @@
-<%= render 'index' %>
+  <table class="table">
+	  <tr class="panel-heading" style="background-color: #f8f8f8">
+		  <td>Posted on</td>
+		  <td>Posted by</td>
+		  <td>Title</td>
+		  <td>Link</td>
+		  <td></td>
+	  	  <td></td>
+	  </tr>
+	<% @posts.each do |f| %>
+		<tr>
+			<td><%= f.created_at.strftime("%m/%d/%Y") %></td>
+			<td><%= link_to f.user.username, user_path(f.user_id) %></td>
+			<td><%= link_to f.title, post_path(f.id) %></td>
+			<td><%= link_to "Link", f.link %></td>
+			<td><%= link_to 'edit', edit_post_path(f.id) %></td>
+			<td><%= link_to 'delete', post_path(f.id), data: {confirm: "Are you sure you want to delete this post?"}, method: :delete %></td>
+		</tr>
+	<% end %>
+  </table>
+<div><%= will_paginate @posts, style: "margin: 0" %></div>
