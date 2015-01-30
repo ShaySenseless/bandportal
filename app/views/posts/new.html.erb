@@ -1,20 +1,17 @@
-<div style="margin: 4% 30% 0 5%">
+<div style="margin: 2% 30% 0 5%">
   <%= simple_form_for @post do |f| %>
-
+    <% unless user_signed_in? %>
+      <%= f.input :email %>
+	    <p>&ast;&ast;Posts created by guests cannot be edited or deleted. If you have an account please sign in, otherwise you're welcome to sign up for a new account. it's free, and will always be :)</p>
+      <% end %>
     <p>
       <%= f.label :post_type %>
       <%= f.select :post_type, ["wanted", "seeking"] %>
     <br>
-    <br>
       <%= f.label :category_id %>
       <%= f.select :category_id, Category.all.map { |f| [f.name, f.id]} %>
-      <%= link_to 'Not sure where to post?', help_path %>
+      Not sure where you post belongs? Read our <%= link_to 'where should i post?', help_path %> page.
     </p>
-    <br>
-    <% unless user_signed_in? %>
-      <%= f.input :email %>
-      <p>Posts created by guests cannot be edited or deleted. If you have an account please sign in, otherwise you're welcome to sign up for a new account. it's free, and will always be :)</p>
-    <% end %>
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :location %>

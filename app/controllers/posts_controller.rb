@@ -5,12 +5,15 @@ class PostsController < ApplicationController
 	def create
 		@post = Post.new(post_params)
 		@post.user = current_user
-		@post.save
-		redirect_to @post
+		if  @post.save
+			redirect_to @post
+		else
+			flash[:alert] = @post.errors.full_messages.to_sentence
+			render 'new'
+		end
 	end
 	def new
 		@post = Post.new
-		user_signed_in? { @post.params[:email] = current_user.email }
 	end
 
 	def index
