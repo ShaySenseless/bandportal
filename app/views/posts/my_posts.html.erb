@@ -1,7 +1,8 @@
   <table class="table">
 	  <tr class="panel-heading row">
 		  <td class="col-md-1">Posted on</td>
-		  <td class="col-md-8">Title</td>
+		  <td class="col-md-7">Title</td>
+		  <td class="col-md-1">Location</td>
 		  <td class="col-md-1">Link</td>
 		  <td class="col-md-1"></td>
 		  <td class="col-md-1"></td>
@@ -10,13 +11,14 @@
 		<tr class="row">
 			<td><%= f.created_at.strftime("%m/%d/%Y") %></td>
 			<td><%= link_to f.title, post_path(f.id) %></td>
+			<td><%= f.location %></td>
 			<td>
 				<%= link_to "http://#{f.link}", :target => '_blank', class: "btn-sm" do %>
-				    <i class="glyphicon glyphicon-link"></i>
+    			    <i class="fa fa-external-link"></i>
 				<% end %>
 			</td>
-			<td><%= link_to 'edit', edit_post_path(f.id) %></td>
-			<td><%= link_to 'delete', post_path(f.id), data: {confirm: "Are you sure you want to delete this post?"}, method: :delete %></td>
+			<td></i><%= link_to ' edit', edit_post_path(f.id), class: "fa fa-pencil-square-o" %></td>
+			<td><%= link_to ' delete', post_path(f.id), class: "fa fa-trash-o", data: {confirm: "Are you sure you want to delete this post?"}, method: :delete %></td>
 		</tr>
 	<% end %>
   </table>

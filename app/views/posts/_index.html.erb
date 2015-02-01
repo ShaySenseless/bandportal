@@ -1,14 +1,16 @@
 <table class="table">
   <tr class="panel-heading row">
 	  <td class="col-md-1">Posted on</td>
-	  <td class="col-md-9">Title</td>
-	  <td class="col-md-1">Posted by</td>
+	  <td class="col-md-8">Title</td>
+	  <td class="col-md-1">Location</td>
 	  <td class="col-md-1">Link</td>
+	  <td class="col-md-1">Posted by</td>
   </tr>
 <% @posts.each do |f| %>
 	<tr class="row">
 		<td><%= f.created_at.strftime("%m/%d/%Y") %></td>
 		<td><%= link_to f.title, post_path(f.id) %></td>
+		<td><%= f.location %></td>
 		<% if f.user.present? %>
 			<td><%= link_to f.user.username, user_path(f.user) %></td>
 		<% else %>

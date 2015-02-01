@@ -1,18 +1,40 @@
 #navbar {
 	margin: 0;
-	background-color: #f8f8f8;
+	background-color: #0F4B52;
+	border: none;
+	min-height: 4vw;
 }
 .navbar-brand {
 	min-width: 16vw;
 }
+#navbar a {
+	color: #fff;
+}
+#navbar .dropdown li a {
+	color: black;
+}
+
+.language {
+	border-radius: 50%;	
+}
 
 #sidebar {
-	border-right: 1px solid #E7E7E7;
+	border-right: 1px solid #fff;
 	padding: 0;
 	margin-bottom: 0;
 }
 #sidebar .category {
-	background-color: #f8f8f8;
+	height: 4vw;
+	background-color: #0F5B72;
+	padding-top: 1px;
+}
+#sidebar .category a {
+	color: #fff;
+	font-size: 16px;
+}
+#sidebar .subcategories a {
+	color: #0F5B72;
+	font-size: 13px;
 }
 #sidebar .subcategories {
 	padding: 0;
@@ -20,6 +42,16 @@
 #sidebar .subcategories li {
 	padding: 0 12px;
 }
+.hidden-sub{ 
+	display: none;
+}
+.category:hover a{ 
+	display: inline-block;
+}
+.category:hover li {
+	background-color: #fff;
+}
+
 
 .main_content {
 	margin: 0 20% 0 2%;
@@ -40,4 +72,8 @@
 
 .login-signup {
 	margin-top: 5%;
+}
+
+.footer {
+	background-color: #e7e7e7;
 }

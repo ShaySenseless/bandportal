@@ -5,7 +5,9 @@
 		<td>Description</td>
 		<td>Posted by</td>
 		<td>Link</td>
-		<td>Send mail</td>
+		<% unless @post.user %>
+			<td>Send mail</td>
+		<% end %>
 	</tr>
 	<tr>
 		<td><%= @post.created_at.strftime("%m/%d/%Y") %></td>
@@ -21,6 +23,8 @@
 			    <i class="fa fa-external-link"></i>
 			<% end %>
 		</td>
-		<td><%= link_to "Reply", new_post_reply_path(@post) %></td>
+		<% unless @post.user %>
+			<td><%= link_to "Reply", new_post_reply_path(@post) %></td>
+		<% end %>
 	</tr>
 </table>
