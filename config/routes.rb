@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :posts
+  resources :posts do
+  	resources :replies
+  end
   resources :users do
   match '/profile', to: 'users#profile', via: :get
   end

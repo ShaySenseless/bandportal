@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 	def create
 		@post = Post.new(post_params)
 		@post.user = current_user
+		user_signed_in?	{@post.email = current_user.email}
 		if  @post.save
 			redirect_to @post
 		else
@@ -56,5 +57,11 @@ class PostsController < ApplicationController
 
 	def post_params
 		params.require(:post).permit(:title, :description, :country, :city, :state, :zipcode, :category_id, :user_id, :post_type, :link, :location, :email)
+	end
+	def is_user?
+		@post = Post.find(params[:id])
+		unless current_user = @post.user
+			redirect_to root_path, alert: "Sorry, you are not authorized to do that."
+		end
 	end
 end

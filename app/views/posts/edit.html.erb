@@ -1,3 +1,4 @@
+<div class="form_main">
     <%= simple_form_for @post do |f| %>
       <%= f.input :title %>
       <%= f.input :description %>
@@ -9,5 +10,6 @@
       <%= f.input :city %>
       <%= f.input :state %>
       <%= f.input :zipcode %>
-      <%= f.button :submit %>
+      <%= f.button :submit, class: "btn-info" %>
     <% end %>
+</div>

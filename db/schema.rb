@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150128234944) do
+ActiveRecord::Schema.define(version: 20150201104342) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -32,9 +32,16 @@ ActiveRecord::Schema.define(version: 20150128234944) do
     t.string   "link"
     t.string   "location"
     t.string   "email"
+    t.integer  "reply_id"
   end
 
+  add_index "posts", ["reply_id"], name: "index_posts_on_reply_id"
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+
+  create_table "replies", force: :cascade do |t|
+    t.string "email"
+    t.text   "message"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -50,6 +57,7 @@ ActiveRecord::Schema.define(version: 20150128234944) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username"
+    t.text     "about_me"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

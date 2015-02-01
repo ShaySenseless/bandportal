@@ -1,23 +1,25 @@
-  <table class="table">
-	  <tr class="panel-heading" style="background-color: #f8f8e8">
-		  <td>Posted on</td>
-		  <td>User</td>
-		  <td>Title</td>
-		  <td>Link</td>
-	  	  <td><%= link_to 'new post', new_post_path %></td>
-	  </tr>
-	<% @posts.each do |f| %>
-		<tr>
-			<td><%= f.created_at.strftime("%m/%d/%Y") %></td>
-			<% if f.user.present? %>
-				<td><%= link_to f.user.username, user_path(f.user) %></td>
-			<% else %>
-				<td></td>
-			<% end %>
-			<td><%= link_to f.title, post_path(f.id) %></td>
-			<td><%= link_to "Link", f.link %></td>
+<table class="table">
+  <tr class="panel-heading row">
+	  <td class="col-md-1">Posted on</td>
+	  <td class="col-md-9">Title</td>
+	  <td class="col-md-1">Posted by</td>
+	  <td class="col-md-1">Link</td>
+  </tr>
+<% @posts.each do |f| %>
+	<tr class="row">
+		<td><%= f.created_at.strftime("%m/%d/%Y") %></td>
+		<td><%= link_to f.title, post_path(f.id) %></td>
+		<% if f.user.present? %>
+			<td><%= link_to f.user.username, user_path(f.user) %></td>
+		<% else %>
 			<td></td>
-		</tr>
-	<% end %>
-  </table>
+		<% end %>
+		<td>
+			<%= link_to "http://#{f.link}", :target => '_blank', class: "btn-sm" do %>
+			    <i class="glyphicon glyphicon-link"></i>
+			<% end %>
+		</td>
+	</tr>
+<% end %>
+</table>
 <div><%= will_paginate @posts, style: "margin: 0" %></div>

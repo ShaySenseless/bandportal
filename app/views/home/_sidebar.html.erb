@@ -1,11 +1,11 @@
-	<ul class="btn-group-vertical col-md-2" role="group" style="border-right: 1px solid #E7E7E7; padding: 0; margin-bottom: 0">
-		<% @categories = Category.all %>
-		<% @categories.each do |f| %>
-			<li type="button" class="btn btn-default" style="background-color: #f8f8f8" ><%= link_to f.name, category_path(f.id) %>
-				<ul type="button" class="button-group button-group-sm" style="padding: 0">
-					<li type="button" class="btn" style="padding: 0 12px" ><%= link_to 'wanted', category_wanted_path(f.id) %></li>
-					<li type="button" class="btn" style="padding: 0 12px" ><%= link_to 'seeking', category_seeking_path(f.id) %></li>
-				</ul>
-			</li>
-		<% end %>
-	</ul>
+<ul id="sidebar" class="btn-group-vertical col-md-2" role="group">
+	<% @categories = Category.all %>
+	<% @categories.each do |f| %>
+		<li type="button" class="category btn btn-default"><%= link_to f.name, category_path(f.id) %>
+			<ul type="button" class="subcategories button-group button-group-sm">
+				<li type="button" class="btn"><%= link_to 'wanted', category_wanted_path(f.id) %></li>
+				<li type="button" class="btn"><%= link_to 'seeking', category_seeking_path(f.id) %></li>
+			</ul>
+		</li>
+	<% end %>
+</ul>

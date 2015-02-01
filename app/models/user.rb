@@ -5,4 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, dependent: :destroy
   validates_presence_of :email, :username
+	after_create :send_welcome_mail
+
+	def send_welcome_mail
+		UserMailer.send_welcome_mail(self).deliver
+	end
 end

@@ -1,0 +1,39 @@
+#navbar {
+	margin: 0;
+	background-color: #f8f8f8;
+}
+.navbar-brand {
+	min-width: 16vw;
+}
+
+#sidebar {
+	border-right: 1px solid #E7E7E7;
+	padding: 0;
+	margin-bottom: 0;
+}
+#sidebar .category {
+	background-color: #f8f8f8;
+}
+#sidebar .subcategories {
+	padding: 0;
+}
+#sidebar .subcategories li {
+	padding: 0 12px;
+}
+
+.main_content {
+	margin: 0 20% 0 2%;
+}
+
+.table .panel-heading {
+	background-color: #f7f7f7;
+}
+
+.form_main {
+	margin: 1% 30% 0 1%;
+}
+
+.overflow {
+	max-height: 26vw;
+	overflow: hidden;
+}

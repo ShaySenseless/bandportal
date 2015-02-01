@@ -1,21 +1,23 @@
-<div style="margin: 2% 30% 0 5%">
+<div class="form_main">
   <%= simple_form_for @post do |f| %>
     <% unless user_signed_in? %>
       <%= f.input :email %>
-	    <p>&ast;&ast;Posts created by guests cannot be edited or deleted. If you have an account please sign in, otherwise you're welcome to sign up for a new account. it's free, and will always be :)</p>
+	    <p style="font-size: 9px">&ast;&ast;Posts created by guests cannot be edited or deleted. If you have an account please sign in, otherwise you're welcome to sign up for a new account. it's free, and will always be :)</p>
       <% end %>
     <p>
-      <%= f.label :post_type %>
-      <%= f.select :post_type, ["wanted", "seeking"] %>
-    <br>
       <%= f.label :category_id %>
       <%= f.select :category_id, Category.all.map { |f| [f.name, f.id]} %>
       Not sure where you post belongs? Read our <%= link_to 'where should i post?', help_path %> page.
+    <br>
+      <%= f.label :post_type %>
+      <%= f.select :post_type, ["wanted", "seeking"] %>
     </p>
     <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :location %>
-    <%= f.input :link %>
+    <div class="row">
+      <div class="col-md-6"><%= f.input :location %></div>
+      <div class="col-md-6"><%= f.input :link %></div>
+    </div>
+    <%= f.input :description, :input_html => {:rows => 7} %>
     <%= f.button :submit, class: "btn-info" %>
   <% end %>
 </div>
