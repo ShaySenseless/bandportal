@@ -28,11 +28,12 @@
           </ul>
         </li>        
       <% else %>
-        <div class="btn-group" role="group">
+        <div class="login-signup btn-group" role="group">
           <button type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <i class="fa fa-user"></i>
             <%= link_to 'log in', new_user_session_path %></button>
-          <button type="button" class="btn btn-default" aria-label="Left Align"><%= link_to 'sign up', new_user_registration_path%></button>
+          <button type="button" class="btn btn-default" aria-label="Left Align">
+            <%= link_to 'sign up', new_user_registration_path %></button>
         </div>
       <% end %>
       </ul>

@@ -32,10 +32,8 @@ ActiveRecord::Schema.define(version: 20150201104342) do
     t.string   "link"
     t.string   "location"
     t.string   "email"
-    t.integer  "reply_id"
   end
 
-  add_index "posts", ["reply_id"], name: "index_posts_on_reply_id"
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "replies", force: :cascade do |t|

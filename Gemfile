@@ -9,13 +9,16 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'therubyracer'
-gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'simple_form'
 gem 'country_select', '~> 2.1.0'
 gem 'slide-down-alerts-rails'
 gem 'will_paginate', '~> 3.0.6'
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+
+
 
 group :development, :test do
   gem 'byebug'

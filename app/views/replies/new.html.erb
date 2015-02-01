@@ -1,11 +1,21 @@
 <div class="form_main">
   <%= simple_form_for ([@post, @reply]) do |f| %>
-    <% unless user_signed_in? %>
-      <%= f.input :email %>
-      <% end %>
-    <%= f.input :message, :input_html => {:rows => 18, :value =>
+    <% if user_signed_in? %>
+      <% if @post.user.present? %>
+      <%= f.input :message, :input_html => {:rows => 18, :value =>
 "Originally posted by #{@post.user.username}:
 \"#{@post.description}\"."} %>
+		<% else %>
+		<%= f.input :message, :input_html => {:rows => 18, :value =>
+"Originally posted by guest (#{@post.email}):
+\"#{@post.description}\"."} %>
+		<% end %>
+	    <% else %>
+      <%= f.input :email %>
+	  <%= f.input :message, :input_html => {:rows => 18, :value =>
+"Originally posted by guest (#{@post.email}):
+\"#{@post.description}\"."} %>
+      <% end %>
     <%= f.button :submit, class: "btn-info" %>
   <% end %>
 </div>
