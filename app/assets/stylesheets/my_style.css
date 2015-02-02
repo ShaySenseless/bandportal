@@ -1,3 +1,7 @@
+body {
+	background-color: #e7e7e7;
+}
+
 #navbar {
 	margin: 0;
 	background-color: #0F4B52;
@@ -5,21 +9,25 @@
 	min-height: 4vw;
 }
 .navbar-brand {
+	padding-left: 25%;
 	min-width: 16vw;
 }
 #navbar a {
 	color: #fff;
 }
+#navbar .login-signup .btn {
+	background-color: #0F5B72;
+}
 #navbar .dropdown li a {
 	color: black;
 }
+
 
 .language {
 	border-radius: 50%;	
 }
 
 #sidebar {
-	border-right: 1px solid #fff;
 	padding: 0;
 	margin-bottom: 0;
 }
@@ -52,17 +60,26 @@
 	background-color: #fff;
 }
 
-
+.content-container {
+	padding-left: 0;
+	background-color: #e7e7e7;
+}
 .main_content {
 	margin: 0 20% 0 2%;
 }
 
+
+
 .table .panel-heading {
-	background-color: #f7f7f7;
+	background-color: #d7d7d7;
+	border-bottom: solid 2px #fff;
+}
+.table .panel-row {
+	border-bottom: solid 2px #fff;
 }
 
 .form_main {
-	margin: 1% 30% 0 1%;
+	margin: 1% 1% 0 1%;
 }
 
 .overflow {
@@ -76,4 +93,5 @@
 
 .footer {
 	background-color: #e7e7e7;
+	margin-bottom: 0;
 }

@@ -3,11 +3,11 @@
 	  <td class="col-md-1">Posted on</td>
 	  <td class="col-md-8">Title</td>
 	  <td class="col-md-1">Location</td>
-	  <td class="col-md-1">Link</td>
 	  <td class="col-md-1">Posted by</td>
+	  <td class="col-md-1">Link</td>
   </tr>
 <% @posts.each do |f| %>
-	<tr class="row">
+	<tr class="row panel-row">
 		<td><%= f.created_at.strftime("%m/%d/%Y") %></td>
 		<td><%= link_to f.title, post_path(f.id) %></td>
 		<td><%= f.location %></td>

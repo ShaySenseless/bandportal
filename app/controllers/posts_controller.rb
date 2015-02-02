@@ -58,7 +58,7 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit(:title, :description, :country, :city, :state, :zipcode, :category_id, :user_id, :post_type, :link, :location, :email)
+		params.require(:post).permit(:title, :description, :category_id, :user_id, :post_type, :link, :location, :email, :terms_of_service)
 	end
 	def is_user?
 		@post = Post.find(params[:id])
