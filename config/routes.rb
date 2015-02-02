@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   match '/terms', to: 'static_pages#terms', via: :get
   match '/contact', to: 'static_pages#contact', via: :get
   match '/my_posts', to: 'posts#my_posts', via: :get
+  match 'contact', to: 'static_pages#send_message', via: :post
 end

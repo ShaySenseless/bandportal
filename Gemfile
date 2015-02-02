@@ -17,6 +17,7 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+gem 'whenever', :require => false
 
 group :development, :test do
   gem 'byebug'

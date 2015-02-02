@@ -15,13 +15,12 @@ body {
 #navbar a {
 	color: #fff;
 }
-#navbar .login-signup .btn {
+#navbar .login-button .btn {
 	background-color: #0F5B72;
 }
 #navbar .dropdown li a {
 	color: black;
 }
-
 
 .language {
 	border-radius: 50%;	
@@ -84,11 +83,19 @@ body {
 
 .overflow {
 	max-height: 26vw;
-	overflow: hidden;
+	overflow: auto;
 }
 
-.login-signup {
-	margin-top: 5%;
+.login-button {
+	margin-top: 10px;
+}
+.login-button {
+	background-color: #0F5B72;
+	color: #fff;
+}
+
+.contact-message {
+	height: 500px;
 }
 
 .footer {

@@ -4,8 +4,8 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
-		@post.user = current_user
 		if user_signed_in?
+			@post.user = current_user
 			@post.email = current_user.email
 		end
 		if  @post.save
