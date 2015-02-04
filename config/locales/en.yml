@@ -41,18 +41,18 @@ en:
       title: Welcome to BerlinBand.
       subtitle: Everything for your band.
       welcome1_html: >
-            BerlinBand is a community platform designated especially to cater to your bands needs. 
-            Feel free to browse through the listings or make the community aware of your needs by creating a new post. 
+            BerlinBand is a community platform designated especially to cater to your bands needs.<br>
+            Feel free to browse through the posts, or make the community aware of your needs by creating your own post.<br> 
             If youre uncertain about the nature of your post or your band needs please refer to the %{help} 
             page and make sure to stick to the %{rules} when posting.
       welcome2_html: >
             There are currently %{post_count} posts on the platform. 
             All posts are automatically deleted after 30 days to ensure fresh and relevent content.
       welcome3_html: >
-            We are looking to extend the platform's language support and would greatly appreciate any help with translation.<br> 
+            &ast;We are looking to extend the platform's language support and would greatly appreciate any help with translation.<br> 
             Please %{contact} if you are willing to translate the site to your language. All languages will be accepted.
       welcome4_html: >
-            The platform is currently at it's Beta version and while we work hard to improve performance and usability, 
+            &ast;&ast;The platform is currently at it's Beta version and while we work hard to improve performance and usability, 
             you may experience some technical issues. We apologize for any inconvinience.
   static_pages:
         help:

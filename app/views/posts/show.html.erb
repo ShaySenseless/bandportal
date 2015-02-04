@@ -1,11 +1,13 @@
-<div class="main-content">
-	<div>Posted on: <%= @post.created_at.strftime("%m/%d/%Y") %></div>
-	<br>
+<div class="main_content">
 	<% if @post.user.present? %>
 		<div>Posted by: <%= @post.user.username %></div>
 		<br>
 	<% end %>
 	<div>Title: <%= @post.title %></div>
+	<br>
+	<div>Description: <%= @post.description %></div>
+	<br>
+	<div>Posted on: <%= @post.created_at.strftime("%m/%d/%Y") %></div>
 	<br>
 	<div>Location: <%= @post.location %></div>
 	<br>
@@ -15,7 +17,8 @@
 		<% end %>
 	</div>
 	<br>
-	<div>Description: <%= @post.description %></div>
+	<div>viewed: <%= @post.viewed %></div>
+	<br>
 	<br>
 	<% if user_signed_in? %>
 		<% if @post.email != current_user.email %>

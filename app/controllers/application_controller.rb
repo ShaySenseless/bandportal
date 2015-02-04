@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 	before_action :auto_delete
 	before_action :set_locale
- 
+
   def default_url_options(options = {})
     { locale: I18n.locale }.merge options
   end
@@ -15,12 +15,12 @@ class ApplicationController < ActionController::Base
   end
 
 	def auto_delete
-	  Post.where('created_at <= ?', Time.now - 4.weeks).destroy_all
+	  Post.where('created_at <= ?', Time.now - 30.days).destroy_all
 	end
 
   protected
 
   def configure_permitted_parameters
-		devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation) }
+		devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :about_me) }
   end
 end

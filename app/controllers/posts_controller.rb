@@ -34,6 +34,7 @@ class PostsController < ApplicationController
 	end
 	def show
 		@post = Post.find(params[:id])
+		@post.increment
 	end
 	def my_posts
 		@posts = Post.where(user: current_user)
@@ -58,7 +59,7 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit(:title, :description, :category_id, :user_id, :post_type, :link, :location, :email, :terms_of_service)
+		params.require(:post).permit(:title, :description, :category_id, :user_id, :post_type, :link, :location, :email, :terms_of_service, :viewed)
 	end
 	def is_user?
 		@post = Post.find(params[:id])
