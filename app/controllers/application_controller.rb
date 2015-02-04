@@ -3,6 +3,20 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
+	before_action :auto_delete
+	before_action :set_locale
+ 
+  def default_url_options(options = {})
+    { locale: I18n.locale }.merge options
+  end
+ 
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+	def auto_delete
+	  Post.where('created_at <= ?', Time.now - 4.weeks).destroy_all
+	end
 
   protected
 

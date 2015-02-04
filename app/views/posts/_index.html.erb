@@ -1,10 +1,10 @@
 <table class="table">
   <tr class="panel-heading row">
-	  <td class="col-md-1">Posted on</td>
-	  <td class="col-md-8">Title</td>
-	  <td class="col-md-1">Location</td>
-	  <td class="col-md-1">Posted by</td>
-	  <td class="col-md-1">Link</td>
+	  <td class="col-md-1"><%= Post.human_attribute_name("created_at") %></td>
+	  <td class="col-md-8">	<%= Post.human_attribute_name("title") %></td>
+	  <td class="col-md-1"><%= Post.human_attribute_name("location") %></td>
+	  <td class="col-md-1"><%= Post.human_attribute_name("user") %></td>
+	  <td class="col-md-1"><%= Post.human_attribute_name("link") %></td>
   </tr>
 <% @posts.each do |f| %>
 	<tr class="row panel-row">

@@ -1,15 +1,7 @@
 <div class="main_content">
-	<h2>Welcome to BerlinBand</h2>
-	<p>BerlinBand is a community listings platform which is designated to connect between bands and artists to various services providers to help fulfill their needs. Ranging from logistical needs to audio services providers, promotion and distribution, 
-	BerlinBand covers it all.
-		Feel free to browse through the listings or make the community aware of your needs by creating a new post.
-	  If you're uncertain about the nature of your post or your band needs please refer to the <%= link_to 'help', help_path %> page and make sure to keep to our <%= link_to 'rules', rules_path %> when posting.
-	</p>
-	<p>All posts are automatically deleted after 30 days to ensure fresh and relevent content, and every user is allowed to send a max amount of 3 emails per day, to avoid spam.
-
-	<p style="margin-top: 30%">&ast;The platform is currently at it's Beta version and while we work hard to improve performance and usability, you may experience some technical issues. We apologize for the inconvinience.
-	</p>
-	<p>Furthermore, we are looking to extend the platform's language support and would greatly appreciate any help with adding new languages to it. Please <%= link_to 'contact us', contact_path %> if you are willing to add a translation to your language.
-	  All languages will be accepted.
-	</p>
+	<h2><%= t('.title') %> <span style="font-size: 17px"><%= t('.subtitle') %></span></h2>
+	<p><%=  t('.welcome1_html', help: link_to('how does it work?', help_path), rules: link_to('site rules', rules_path)) %></p>
+	<p><%= t('.welcome2_html', post_count: @posts.count()) %></p>		
+	<p style="margin-top: 35%"><%= t('.welcome3_html', contact: link_to('contact us', contact_path)) %></p>
+	<p><%= t('.welcome4_html') %></p>
 </div>

@@ -20,4 +20,136 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      post:
+        title: Title
+        created_at: Posted on
+        location: Location
+        user: Posted by
+        link: Link
+  home:
+    navbar:
+      newpost: Create new post
+      help: How does it work?
+      login: log in
+      signup: sign up
+      my_posts: my posts
+      profile: view profile
+      logout: log out
+    index:
+      title: Welcome to BerlinBand.
+      subtitle: Everything for your band.
+      welcome1_html: >
+            BerlinBand is a community platform designated especially to cater to your bands needs. 
+            Feel free to browse through the listings or make the community aware of your needs by creating a new post. 
+            If youre uncertain about the nature of your post or your band needs please refer to the %{help} 
+            page and make sure to stick to the %{rules} when posting.
+      welcome2_html: >
+            There are currently %{post_count} posts on the platform. 
+            All posts are automatically deleted after 30 days to ensure fresh and relevent content.
+      welcome3_html: >
+            We are looking to extend the platform's language support and would greatly appreciate any help with translation.<br> 
+            Please %{contact} if you are willing to translate the site to your language. All languages will be accepted.
+      welcome4_html: >
+            The platform is currently at it's Beta version and while we work hard to improve performance and usability, 
+            you may experience some technical issues. We apologize for any inconvinience.
+  static_pages:
+        help:
+          title: Where should I post?
+          intro_html: >
+            BerlinBand is a platform designated to cater to all of your bands needs and wishes.<br> 
+            Over the last decade terms such as "recording studio", "producer" have lost their original meaning, 
+            so if you're confused or not sure where to post we've put a few questions together to help you orient yourself.<br> 
+            If you answer "yes" to any of these questions, you should most likely post in the corresponding category, 
+            so that your posts will be seen by your target audience.
+          rehearsal_room: Rehearsal room
+          rehearsal_room_text_html: >
+            wanted:<br> 
+            - Are you or your band looking for a rehearsal room? <br><br>
+            seeking:<br> 
+            - Do you own a rehearsal room and want to rent it to bands?<br>
+            - Are you looking for another band to share you rehearsal room?
+          producer: Producer
+          producer_text_html: >
+            "Many people mistake a producer to a recording engineer a mixing engineer and sometimes even a fairy so 
+            let's set one thing straight:<br> A producer does not have to push a single button in order to produce a record. 
+            The producers job is to produce a certain product (LP, EP, demo, live recording etc'...) under the given 
+            circumstances (budget, time-frame, production needs, style etc'...). <br><br> 
+            wanted:<br> 
+            - Are you interested in recording an album/EP/live show or any commertially distibuted product and don't 
+            know how to proceed? than I highly recommend hiring, or at least consulting a producer. 
+            Having an objective set of ears and the expertise of someone who already has a few records under his/her 
+            belt is very benefitial for the final product, and if that isn't enough it can also significantly reduce 
+            the costs of the production.<br><br> 
+            seeking:<br> 
+            - Are you a producer? have you just gradueted from audio engineering school and looking to establish your reputation? 
+            are you looking for fresh talent that will top the charts if given a bit of guidance? 
+            than this is the place for you.
+          studio: Studio
+          studio_text_html: >
+            wanted:<br>
+            - Looking for a studio to record an album/EP/demo at?<br><br>
+            seeking:<br>
+            - Are you a studio owner?<br>
+            - Do you own a pair of microphones and an audio interface?<br> 
+            - Is your matress used as a bass trap on a regular basis?
+          mixing: Mixing
+          mixing_text_html: >
+            wanted:<br>
+            - Are you wrapping up the recording process and looking for a someone to handle the mixing?<br><br>
+            seeking:<br>
+            - Are you offering audio mixing services and looking for clients?
+          mastering: Mastering
+          mastering_text_html: >
+            wanted:<br>
+            - Are you wrapping up the record and missing the final touch before it's sent out to distribution?<br><br>
+            seeking:<br>
+            - Are you a mastering engineer looking for more work?
+          graphics: Graphics
+          graphics_text_html: >
+            wanted:<br>
+            - Need cover art for your band? a new logo? flyers or posters for you next show?<br><br>
+            seeking:<br>
+            - Are you a graphic artist looking for bands to work with?
+          distribution: Distribution
+          distribution_text_html: >
+            wanted:<br>
+            - Do you have a finished product at hand and looking for someone to distribute it?<br><br>
+            seeking:<br>
+            - Are you a record label?<br>
+            - Do you have a music distibution company?
+          video: Video
+          video_text_html: >
+            wanted:<br>
+            - Need a music video done for you band?<br>
+            - Maybe a crowdfunding video to finance your next record?<br>
+            - Promotional pictures go here as well.<br><br>seeking:<br>
+            - Are you a video producer, photographer or anything related to the video production industry?
+          shows: Shows
+          shows_text_html: >
+            wanted:<br>
+            - All set and ready to hit the stage?<br>
+            - Need an opening act for you next gig?<br>
+            - Need a co-headliner to tour with?<br><br>
+            seeking:<br>
+            - Looking for bands to play in your next event?<br>
+            - Need a band to play in your wedding or your sons 'Bar-mitzva'?
+          transportation: Transportation
+          transportation_text_html: >
+            wanted:<br>
+            - Need someone to drive you to/from a gig?<br>
+            - Need a van to go on tour with?<br><br>seeking:<br>
+            - Are you offering transportation services?<br>
+            - Do you own a big car and want to make a few extra bucks?
+        rules:
+          title: Site rules
+          main_content_html: >
+            - Registration and usage of the site are 100% free.<br>
+            - Each post will remain public for 30 days, afterwhich it will be deleted.<br>
+            - Posts which were posted in an inappropriate section of the site will be deleted.<br>
+            - Posts advertising commertial products which do not belong to the category in which they were posted will be alterely deleted.<br>
+            - The responasability for a posts content and links, as well as any uploaded data lies solely on it's author.<br>
+            - Uploading copyrighted data (music, photos etc') is a violation of the law and is subjugated to prosecution.<br>
+            - Uploading GEMA copyrighted data is strictly prohibited, violators may by prosecuted.<br>
+            - Any use of the site is subjugated to the sites <%= link_to 'terms of service', terms_path %>.

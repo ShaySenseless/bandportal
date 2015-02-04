@@ -18,7 +18,3 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-
-every 1.day, :at => '7:00 pm' do
-  rake "Post.where('created_at <= ?', Time.now - 2.munites).destroy_all"
-end
