@@ -29,7 +29,7 @@ de:
         title: Titel
         description: Beschreibung
         email: Email
-        created_at: Veröffentlich seit
+        created_at: Veröffentlicht auf
         location: Ort
         user: Gepostet von
         link: Link
@@ -45,22 +45,21 @@ de:
   posts:
     new:
       guests_notice_html: >
-            &ast;&ast;Bitte beachten: wenn man als Gast ein Post veröffentlich lesst. 
-            Kann der Post nicht nachbearbeitet werder oder vor dem ende seiner laufzeit entfernt werden.
-            Wenn ihr ein konto haben, bitte log sich ein. Wenn nicht, seid ihr eingeladent sich anzumelden.
-            Es ist kostenlos, und wird immer so geblieben :)
-      help: Unsicher wo dein Post gehöhrt? Schaut sich an unsere
-      help_link: Wo soll ich Posten?
-      new_post_terms: Bitte akzeptieren unsere
+            &ast;Wenn du als Gast einen Beitrag veröffentlichst, kannst du den Beitrag nicht nachbereiten oder vor 30 Tagen 
+            löschen. Falls du ein Konto hast, logge dich bitte ein. Falls du noch kein Konto hast, bist du willkommen dich zu 
+            registrieren. Die Registrierung ist und bleibt kostenlos.
+      help: Unsicher in welche Kategorie dein Beitrag gehört? Gehe zu
+      help_link: Wo soll ich posten?
+      new_post_terms: Bitte akzeptiere unsere
       new_post_terms_link: AGB
     show:
       reply: Dieses post beantworten
   home:
     navbar:
-      newpost: Anzeige Aufgeben
+      newpost: Anzeige aufgeben
       help: Wie funktioniert das?
       login: Anmelden
-      signup: Regestrieren
+      signup: Registrieren
       my_posts: meine posts
       profile: mein profil ansehen
       logout: abmelden
@@ -130,12 +129,11 @@ de:
             - Hast du vor kurzem deinen Abschluss im Bereich Tontechnik erlangt und möchtest dir einen Ruf aufbauen?
           studio: Studio
           studio_text_html: >
-            wanted:<br>
-            - Looking for a studio to record an album/EP/demo at?<br><br>
-            seeking:<br>
-            - Are you a studio owner?<br>
-            - Do you own a pair of microphones and an audio interface?<br> 
-            - Is your mattress used as a bass trap on a regular basis?
+            Suche:<br>
+            - Suchst du ein Studio, wo du dein Album/EP/Demo aufnehmen kannst?<br>
+            Biete:<br>
+            - Besitzt du dein eigenes Studio?<br>
+            - Besitzt du eigene Mikrophone oder anderes Studio-Equipment?
           mixing: Mixing
           mixing_text_html: >
             Suche:<br>
