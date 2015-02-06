@@ -18,6 +18,7 @@ gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'i18n-tasks', '~> 0.7.11'
 gem "recaptcha", :require => "recaptcha/rails"
+gem 'rails_12factor'
 gem 'pg'
 
 group :development, :test do
