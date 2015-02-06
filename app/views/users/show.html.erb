@@ -1,7 +1,6 @@
-<div class="main_content">
-	<p>Username: <%= @user.username %></p>
-	<p>Email: <%= @user.email %></p>
-	<p>Joined at: <%= @user.created_at.strftime("%m/%d/%Y") %></p>
-	<p>Last signed in: <%= @user.last_sign_in_at.strftime("%m/%d/%Y") %></p>
-	<p>About me: <%= @user.about_me %></p>
+<div class="main_content well">
+	<p><%= User.human_attribute_name("username") %>: <%= @user.username %></p>
+	<p><%= User.human_attribute_name("created_at") %>: <%= @user.created_at.strftime("%m/%d/%Y") %></p>
+	<p><%= User.human_attribute_name("last_sign_in_at") %>: <%= @user.last_sign_in_at.strftime("%m/%d/%Y") %></p>
+	<p><%= User.human_attribute_name("about_me") %>: <%= @user.about_me %></p>
 </div>

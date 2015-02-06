@@ -1,7 +1,7 @@
 <div class="main_content">
 	<h2><%= t('.title') %> <span style="font-size: 17px"><%= t('.subtitle') %></span></h2>
-	<p><%=  t('.welcome1_html', help: link_to('how does it work?', help_path), rules: link_to('site rules', rules_path)) %></p>
+	<p><%=  t('.welcome1_html', help: link_to(I18n.translate('.help_link'), help_path), rules: link_to(I18n.translate('.terms_link'), rules_path)) %></p>
 	<p><%= t('.welcome2_html', post_count: @posts.count()) %></p>		
-	<p style="margin-top: 31%"><%= t('.welcome3_html', contact: link_to('contact us', contact_path)) %></p>
+	<p style="margin-top: 31%"><%= t('.welcome3_html', contact: link_to(I18n.translate('.contact_link'), contact_path)) %></p>
 	<p><%= t('.welcome4_html') %></p>
 </div>

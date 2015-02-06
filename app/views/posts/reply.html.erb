@@ -1,13 +1,13 @@
 <div class="form_main">
   <div class="row">
     <div class="col-md-6">
-    <%= simple_form_for ([@post, @reply]) do |f| %>
-      <%= f.input :message, :input_html => {:rows => 22, :value => "Original post:
+    <%= simple_form_for @post, :url => {controller: "posts", action: "send_reply"} do |f| %>
+      <%= f.input :message, as: :text, :input_html => {:rows => 22, :value => "Original post:
   \"#{@post.description}\"."} %>
     </div>
     <div class="col-md-6">
       <%= f.input :email %>
-       <%= recaptcha_tags %>
+       <!-- <%= recaptcha_tags %> -->
        <br>
       <%= f.button :submit, class: "btn-info" %>
     <% end %>

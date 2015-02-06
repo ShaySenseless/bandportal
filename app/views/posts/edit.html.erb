@@ -1,15 +1,19 @@
-<div class="form_main">
+<div class="form_main row">
     <%= simple_form_for @post do |f| %>
-      <%= f.input :title %>
-      <%= f.input :description %>
+    <div class="col-md-6">
+      <%= f.input :title, label: Post.human_attribute_name("title") %>
       <p>
-        <%= f.label :category_id %>
+        <%= f.label :category_id, label: Post.human_attribute_name("category_id") %>
         <%= f.select :category_id, Category.all.map { |f| [f.name, f.id]} %>
+        <%= f.label :post_type, label: Post.human_attribute_name("post_type") %>
+        <%= f.select :post_type, Post.all.map { |f| [f.post_type, f.id]} %>
       </p>
-      <%= f.input :country%>
-      <%= f.input :city %>
-      <%= f.input :state %>
-      <%= f.input :zipcode %>
+      <%= f.input :location, label: Post.human_attribute_name("location")%>
+      <%= f.input :link, label: Post.human_attribute_name("link")%>
       <%= f.button :submit, class: "btn-info" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.input :description, input_html: { rows: 23 } %>
     <% end %>
+    </div>
 </div>

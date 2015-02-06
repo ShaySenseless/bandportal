@@ -7,15 +7,17 @@ class RepliesController < ApplicationController
 		# Refactor!
 		@reply = Reply.new(reply_params)
 		@post = Post.find(params[:post_id])
-		if user_signed_in?
-			@reply.email = current_user.email
+		if verify_recaptcha()
+			ActionMailer::Base.mail(
+				:from => @reply.email, 
+			  	:to => @post.email,
+			  	:subject => "New reply to your post on BerlinBand", 
+			  	:body => @reply.message).deliver_now
+			redirect_to root_path, notice: "Message successfully sent."
+		else
+			flash[:alert] = @post.errors.full_messages.to_sentence
+			render 'new'
 		end
-		ActionMailer::Base.mail(
-			:from => @reply.email, 
-		  	:to => @post.email,
-		  	:subject => "New reply to your post on BerlinBand", 
-		  	:body => @reply.message).deliver_now
-		redirect_to root_path, notice: "Message successfully sent."
 	end
 
 	private

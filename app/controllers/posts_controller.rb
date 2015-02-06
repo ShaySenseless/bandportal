@@ -4,16 +4,16 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
-		if user_signed_in?
-			@post.user = current_user
-			@post.email = current_user.email
-		end
-		if  @post.save
-			redirect_to @post
-		else
+		if verify_recaptcha(:model => @post, :message => "Oh! It's error with reCAPTCHA!") && @post.save
+	  		if user_signed_in?
+				@post.user = current_user
+				@post.email = current_user.email
+			end
+		    redirect_to @post
+	    else
 			flash[:alert] = @post.errors.full_messages.to_sentence
 			render 'new'
-		end
+	    end
 	end
 	def new
 		@post = Post.new
@@ -49,11 +49,24 @@ class PostsController < ApplicationController
 		redirect_to @post
 	end
 
-
 	def destroy
 		@post = Post.find(params[:id])
 		@post.destroy
 		redirect_to root_path
+	end
+
+	def reply
+		@post = Post.find(params[:post_id])
+	end
+	def send_reply
+		# @reply = Reply.new(reply_params)
+		@post = params[:post]
+		ActionMailer::Base.mail(
+			:from => @post[:email], 
+		  	:to => @post[:email],
+		  	:subject => "New reply to your post on BerlinBand", 
+		  	:body => @post[:message]).deliver_now
+		redirect_to root_path, notice: "Message successfully sent."
 	end
 
 	private

@@ -18,6 +18,7 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'i18n-tasks', '~> 0.7.11'
+gem "recaptcha", :require => "recaptcha/rails"
 
 group :development, :test do
   gem 'byebug'

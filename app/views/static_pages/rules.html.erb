@@ -1,4 +1,4 @@
 <div class="main_content">
 	<h2><%= t('.title') %></h2>
-	<p><%= t('.main_content_html') %></p>
+	<p><%= t('.main_content_html', terms: link_to(I18n.translate('.terms_link'), terms_path)) %></p>
 </div>

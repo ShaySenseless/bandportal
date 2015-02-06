@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   scope "/:locale" do
     devise_for :users
     resources :posts do
-    	resources :replies
+      match '/reply', to: 'posts#reply', via: :get
+      match '/send_reply', to: 'posts#send_reply', via: :patch
     end
     resources :users do
     match '/profile', to: 'users#profile', via: :get

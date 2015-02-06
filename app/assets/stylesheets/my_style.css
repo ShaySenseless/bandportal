@@ -86,7 +86,7 @@ body {
 	margin-top: 0;
 }
 .main_content {
-	margin: 2% 20% 0 2%;
+	margin: 1% 22% 0 1%;
 }
 
 .table .panel-heading {
@@ -113,4 +113,8 @@ body {
 .footer {
 	background-color: #e7e7e7;
 	margin-bottom: 0;
+}
+.title {
+	font-weight: bold;
+	font-size: 18px;
 }
