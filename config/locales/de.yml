@@ -42,6 +42,16 @@ de:
         created_at: Registriert am
         about_me: Über mich
         last_sign_in_at: Zuletzt eingeloggt am
+    errors:
+      models:
+        post:
+          attributes:
+            description:
+              blank: Bitte ihre Beschreibung eintragen
+            title:
+              blank: Bitte ihre Titel eintragen
+            terms_of_service:
+              accepted: Bitte unsere AGB bestätigen
   posts:
     new:
       guests_notice_html: >
@@ -53,6 +63,8 @@ de:
       new_post_terms_link: AGB
     show:
       reply: Dieses post beantworten
+    reply:
+      send: Abschiken
   home:
     navbar:
       newpost: Anzeige aufgeben

@@ -21,6 +21,10 @@ gem "recaptcha", :require => "recaptcha/rails"
 gem 'rails_12factor'
 gem 'pg'
 
+group :production do
+	gem 'rollbar', '~> 1.4.4'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

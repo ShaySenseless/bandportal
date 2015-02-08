@@ -8,8 +8,8 @@ class PostsController < ApplicationController
 			@post.user = current_user
 			@post.email = current_user.email
 		end
-		if verify_recaptcha(:model => @post, :message => "Oh! It's error with reCAPTCHA!") && @post.save
-		    redirect_to @post
+		if @post.save
+			redirect_to @post
 	    else
 			flash[:alert] = @post.errors.full_messages.to_sentence
 			render 'new'
@@ -59,13 +59,18 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:post_id])
 	end
 	def send_reply
-		# @reply = Reply.new(reply_params)
-		@post = params[:post]
+		@reply = params[:post]
+		@post = Post.find(params[:post_id])
+		if user_signed_in?
+			@user_email = current_user.email
+		else
+			@user_email = @reply[:email]
+		end
 		ActionMailer::Base.mail(
-			:from => @post[:email], 
-		  	:to => @post[:email],
+			:from => @user_email, 
+		  	:to => @post.email,
 		  	:subject => "New reply to your post on BerlinBand", 
-		  	:body => @post[:message]).deliver_now
+		  	:body => @reply[:message]).deliver_now
 		redirect_to root_path, notice: "Message successfully sent."
 	end
 

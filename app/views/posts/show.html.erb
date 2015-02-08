@@ -11,7 +11,7 @@
 	<br>
 	<div><%= Post.human_attribute_name("location") %>: <%= @post.location %></div>
 	<br>
-	<div><%= "link" %>:
+	<div><%= Post.human_attribute_name("link") %>:
 		<%= link_to "http://#{@post.link}", :target => '_blank', class: "btn-sm" do %>
 		    <i class="fa fa-external-link"></i>
 		<% end %>

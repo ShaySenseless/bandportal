@@ -22,7 +22,20 @@
       <%= content_for(:the_links) do %>
       <%= t('.new_post_terms') %> <%= link_to t('.new_post_terms_link'), terms_path,:remote => true %> 
       <% end %>
-       <%= recaptcha_tags %>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <% if user_signed_in? %>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      <% end %>
+       <!-- <%= recaptcha_tags %> -->
       <!-- <div class="g-recaptcha" data-sitekey="6LfdggETAAAAAGE1teFLCpjnPXUosuAVFCtKL56o"></div> -->
       <%= f.input :terms_of_service, as: :boolean, :label => content_for(:the_links) %>
       <%= f.button :submit, class: "btn-info" %>

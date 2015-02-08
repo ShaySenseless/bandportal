@@ -54,6 +54,8 @@ en:
       new_post_terms_link: terms of service
     show:
       reply: reply to this post
+    reply:
+      send: Send
   home:
     navbar:
       newpost: Create new post
