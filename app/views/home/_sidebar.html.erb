@@ -1,9 +1,9 @@
 <ul id="sidebar" class="btn-group-vertical col-md-2" role="group">
 	<% Category.all.each do |f| %>
-		<li type="button" class="category btn btn-default show"><%= link_to f.name, category_path(f.id) %>
-			<ul type="button" class="subcategories button-group button-group-sm">
-				<li type="button" class="btn"><%= link_to t('.wanted'), category_wanted_path(f.id), class: "hidden-sub" %></li>
-				<li type="button" class="btn"><%= link_to t('.seeking'), category_seeking_path(f.id), class: "hidden-sub" %></li>
+		<li type="button" class="category"><%= link_to f.name, category_path(f.id), class: "btn show" %>
+			<ul type="button" class="subcategories button-group-sm">
+				<button type="button"><%= link_to t('.wanted'), category_wanted_path(f.id), class: "hidden-sub btn" %></button>
+				<button type="button" class="seeking"><%= link_to t('.seeking'), category_seeking_path(f.id), class: "hidden-sub btn" %></button>
 			</ul>
 		</li>
 	<% end %>

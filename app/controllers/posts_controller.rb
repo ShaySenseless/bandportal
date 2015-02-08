@@ -4,11 +4,11 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
+  		if user_signed_in?
+			@post.user = current_user
+			@post.email = current_user.email
+		end
 		if verify_recaptcha(:model => @post, :message => "Oh! It's error with reCAPTCHA!") && @post.save
-	  		if user_signed_in?
-				@post.user = current_user
-				@post.email = current_user.email
-			end
 		    redirect_to @post
 	    else
 			flash[:alert] = @post.errors.full_messages.to_sentence

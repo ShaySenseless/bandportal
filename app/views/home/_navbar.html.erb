@@ -11,15 +11,15 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <button class="btn highlight"><%= link_to t('.newpost'), new_post_path %></button>
-        <button class="btn"><%= link_to t('.help'), help_path %></button>
+        <button class="highlight"><%= link_to t('.newpost'), new_post_path, class: "btn" %></button>
+        <button><%= link_to t('.help'), help_path, class: "btn" %></button>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
         <li class="dropdown">
-          <button href="#" class="dropdown-toggle btn" data-toggle="dropdown" role="button" aria-expanded="false">
-            <span><%= current_user.email %></span> <span class="caret"></span></button>
+          <button href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <span class="btn"><%= current_user.email %> <span class="caret"></span></span></button>
           <ul class="dropdown-menu" role="menu">
             <li><%= link_to t('.my_posts'), my_posts_path %></li>
             <li><%= link_to t('.profile'), user_profile_path(current_user) %></li>
@@ -29,20 +29,18 @@
         </li>        
       <% else %>
         <div class="login-button btn-group" role="group">
-          <button type="button" class="btn" aria-label="Left Align">
-            <i class="fa fa-user"></i>
-            <%= link_to t('.login'), new_user_session_path %></button>
-            <i class="fa fa-user-plus"></i>
-          <button type="button" class="btn highlight" aria-label="Left Align">
-            <%= link_to t('.signup'), new_user_registration_path %></button>
+          <button type="button" aria-label="Left Align">
+            <%= link_to t('.login'), new_user_session_path, class: "btn" %></button>
+          <button type="button" class="highlight" aria-label="Left Align">
+            <%= link_to t('.signup'), new_user_registration_path, class: "btn" %></button>
         </div>
       <% end %>
         <div class="language btn-group" role="group">
-          <button type="button" class="btn" aria-label="Left Align">
-            <%= link_to image_tag("#{image_path('/images/de.svg')}"), locale: :de %>
+          <button type="button" aria-label="Left Align">
+            <%= link_to image_tag("#{image_path('/images/de.svg')}"), locale: :de, class: "btn" %>
           </button>
-          <button type="button" class="btn" aria-label="Left Align">
-            <%= link_to image_tag("#{image_path('/images/gb.svg')}"), locale: :en %>
+          <button type="button" aria-label="Left Align">
+            <%= link_to image_tag("#{image_path('/images/gb.svg')}"), locale: :en, class: "btn" %>
           </button>
         </div>        
       </ul>

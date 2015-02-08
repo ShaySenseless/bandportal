@@ -15,9 +15,12 @@ body {
 #navbar a {
 	color: #fff;
 }
-#navbar .btn {
+#navbar button {
 	background-color: #1F6B22;
-	margin-top: 10px;
+	margin-top: 9px;
+	border: none;
+	border-radius: 4px;
+	padding: 0;
 }
 #navbar .btn:hover {
 	background-color: #3F8B42;
@@ -37,36 +40,56 @@ body {
 	float: right;
 	margin-left: 1vw;
 }
-.language .btn {
+.language button {
 	padding: 3px;
 }
-.language .btn img {
+.language img {
 	height: 26px;
 	border-radius: 50%;
+	margin: 4px;
 }
 
 #sidebar {
 	padding: 0;
 	margin-bottom: 0;
+
 }
 #sidebar .category {
 	height: 4vw;
 	background-color: #1F6B22;
-	padding-top: 1px;
+	border-bottom: solid white 1px;
 }
 #sidebar .category a {
 	color: #fff;
 	font-size: 16px;
+	padding-bottom: 0;
+	padding-top: 2px;
+}
+#sidebar .category:hover {
+	background-color: #3F8B42;
+}
+#sidebar .subcategories a:hover {
+	background-color: #e7e7e7;
 }
 #sidebar .subcategories a {
-	color: #0F5B72;
+	color: #000;
 	font-size: 13px;
+	border: none;
 }
-#sidebar .subcategories {
+#sidebar .subcategories button {
+	background-color: #fff;
+	border: none;
+	height: 20px;
+	border-radius:  4px;
 	padding: 0;
 }
-#sidebar .subcategories li {
-	padding: 0 12px;
+#sidebar .subcategories a {
+	padding: 0 5px;
+	height: 100%;
+	border: none;
+}
+#sidebar .subcategories .seeking {
+	margin-left: 35px
 }
 .hidden-sub{ 
 	display: none;
@@ -74,7 +97,7 @@ body {
 .category:hover a{ 
 	display: inline-block;
 }
-.category:hover li {
+.category:hover .subcategories a {
 	background-color: #fff;
 }
 

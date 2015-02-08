@@ -29,9 +29,9 @@ de:
         title: Titel
         description: Beschreibung
         email: Email
-        created_at: Veröffentlicht auf
+        created_at: Gepostet
         location: Ort
-        user: Gepostet von
+        user: Gepostet
         link: Link
         post_type: Art des Post
         category_id: Kategorie
@@ -46,8 +46,7 @@ de:
     new:
       guests_notice_html: >
             &ast;Wenn du als Gast einen Beitrag veröffentlichst, kannst du den Beitrag nicht nachbereiten oder vor 30 Tagen 
-            löschen. Falls du ein Konto hast, logge dich bitte ein. Falls du noch kein Konto hast, bist du willkommen dich zu 
-            registrieren. Die Registrierung ist und bleibt kostenlos.
+            löschen. Falls du ein Konto hast, logge dich bitte ein.
       help: Unsicher in welche Kategorie dein Beitrag gehört? Gehe zu
       help_link: Wo soll ich posten?
       new_post_terms: Bitte akzeptiere unsere
